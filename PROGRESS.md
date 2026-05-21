@@ -56,6 +56,6 @@
 
 ## 2026-05-21T07:56:00+05:30
 
-- Pushed final status docs to GitHub at commit `4b197e8`.
+- Pushed final status docs to GitHub.
 - Redeployed production with Vercel; canonical URL `https://agra-committee-grantmaker.vercel.app` returned HTTP 200.
 - Browser session `agra-public-final` loaded the public app, confirmed title `AGRA Committee-Governed Grantmaker`, and captured `outputs/visual-qa/public-final-1440.png`.
