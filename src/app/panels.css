@@ -1,0 +1,145 @@
+.decision-section,
+.ledger-section {
+  margin: 18px auto 0;
+  max-width: 1380px;
+  padding: 28px 10px 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.decision-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1.3fr 0.7fr;
+  margin-top: 16px;
+}
+
+.trace-card,
+.proof-card,
+.agent-card {
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.verdict-pill {
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 8px 12px;
+}
+
+.accepted,
+.verdict-dot.accepted {
+  color: var(--green);
+}
+
+.rejected,
+.verdict-dot.rejected {
+  color: var(--coral);
+}
+
+.pending,
+.verdict-dot.pending {
+  color: var(--amber);
+}
+
+.hash-line {
+  align-items: center;
+  background: rgba(116, 167, 255, 0.12);
+  border-radius: 12px;
+  color: var(--blue);
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px;
+}
+
+.proof-card dl,
+.agent-row,
+.ledger-list {
+  display: grid;
+  gap: 12px;
+}
+
+.proof-card dl {
+  grid-template-columns: repeat(3, 1fr);
+  margin: 18px 0;
+}
+
+.proof-link {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.agent-row {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 14px;
+}
+
+.agent-card {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 42px 1fr;
+}
+
+.agent-icon {
+  align-items: center;
+  background: rgba(255, 250, 240, 0.1);
+  border-radius: 14px;
+  display: flex;
+  height: 42px;
+  justify-content: center;
+}
+
+.agent-icon svg {
+  height: 20px;
+  width: 20px;
+}
+
+.agent-card span {
+  color: var(--text);
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+.ledger-list {
+  margin-top: 14px;
+}
+
+.ledger-item {
+  align-items: center;
+  border-radius: 14px;
+  color: var(--text);
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 12px 1fr 0.6fr 0.3fr;
+  padding: 14px;
+  text-align: left;
+}
+
+.ledger-item.active {
+  border-color: rgba(84, 211, 162, 0.55);
+}
+
+.verdict-dot {
+  background: currentColor;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+
+@media (max-width: 980px) {
+  .decision-grid,
+  .agent-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .proof-card dl,
+  .ledger-item {
+    grid-template-columns: 1fr;
+  }
+}

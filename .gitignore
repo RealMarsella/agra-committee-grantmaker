@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+cache/
+broadcast/
+*.log
+*.tsbuildinfo
+outputs/**/*.png
+outputs/**/*.webm
+outputs/**/*.mp4
+.vercel

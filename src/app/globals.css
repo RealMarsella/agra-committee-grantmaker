@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap");
+@import "./forms.css";
+@import "./panels.css";
+
+:root {
+  --ink: #11120f;
+  --charcoal: #171916;
+  --panel: #f3efe3;
+  --panel-2: #fffaf0;
+  --line: rgba(255, 250, 240, 0.18);
+  --muted: #a9a48f;
+  --text: #f7f1df;
+  --green: #54d3a2;
+  --amber: #ffbd68;
+  --coral: #ff6f61;
+  --blue: #74a7ff;
+  --shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--ink);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  background:
+    linear-gradient(135deg, rgba(84, 211, 162, 0.12), transparent 26%),
+    linear-gradient(225deg, rgba(255, 189, 104, 0.1), transparent 24%),
+    var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.agra-page {
+  min-height: 100vh;
+  padding: 14px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.trace-field {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.hero-shell {
+  min-height: calc(100vh - 28px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(243, 239, 227, 0.08), rgba(17, 18, 15, 0.65)),
+    rgba(23, 25, 22, 0.9);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.topbar {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 18px 22px;
+  position: relative;
+  z-index: 2;
+}
+
+.brand,
+.repo-link,
+.eyebrow,
+.verdict-pill,
+.proof-link {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.brand {
+  font-weight: 700;
+}
+
+.brand-mark {
+  align-items: center;
+  background: var(--panel);
+  border-radius: 50%;
+  color: var(--ink);
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  width: 34px;
+}
+
+.nav-links {
+  color: var(--muted);
+  display: flex;
+  font-size: 0.78rem;
+  gap: 22px;
+}
+
+.repo-link {
+  background: rgba(247, 241, 223, 0.1);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+
+.judge-grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 520px);
+  padding: 40px 38px 46px;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-panel {
+  align-self: center;
+  max-width: 790px;
+}
+
+.eyebrow,
+.section-kicker {
+  color: var(--amber);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Instrument Serif", serif;
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 0.98;
+  margin-top: 18px;
+  max-width: 880px;
+}
+
+h2 {
+  font-size: 1.45rem;
+}
+
+h3 {
+  font-size: 0.98rem;
+}
+
+.intro-panel p,
+.trace-card p,
+.proof-card p,
+.agent-card p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 18px;
+}
+
+.proof-strip,
+.trace-metrics {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.metric {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.metric span,
+dt {
+  color: var(--muted);
+  display: block;
+  font-size: 0.72rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.metric strong,
+dd {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.application-form,
+.trace-card,
+.proof-card,
+.agent-card,
+.ledger-item {
+  border: 1px solid var(--line);
+  background: rgba(17, 18, 15, 0.62);
+  backdrop-filter: blur(22px);
+}
+
+.decision-header,
+.proof-title {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+@media (max-width: 980px) {
+  .judge-grid,
+  .agent-row {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3.3rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .agra-page {
+    padding: 8px;
+  }
+
+  .hero-shell {
+    border-radius: 18px;
+  }
+
+  .topbar,
+  .judge-grid {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .repo-link {
+    display: none;
+  }
+
+  .proof-strip,
+  .trace-metrics,
+  .ledger-item {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2.45rem;
+  }
+}

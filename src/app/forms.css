@@ -1,0 +1,77 @@
+.application-form {
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.form-head {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.field span {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.field input,
+.field textarea,
+.field select {
+  background: rgba(255, 250, 240, 0.08);
+  border: 1px solid rgba(255, 250, 240, 0.16);
+  border-radius: 12px;
+  color: var(--text);
+  min-height: 42px;
+  outline: none;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.field textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr 0.45fr;
+}
+
+.primary-action {
+  align-items: center;
+  background: var(--green);
+  border: 0;
+  border-radius: 999px;
+  color: #07100c;
+  display: flex;
+  font-weight: 800;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 13px 18px;
+  width: 100%;
+}
+
+.primary-action:disabled {
+  opacity: 0.72;
+}
+
+.form-error {
+  color: var(--coral);
+  font-size: 0.84rem;
+  margin-top: 12px;
+}
+
+@media (max-width: 620px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

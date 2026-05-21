@@ -1,0 +1,40 @@
+{
+  "name": "agra-committee-grantmaker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "arc:check": "tsx scripts/check-arc.ts",
+    "replay": "tsx scripts/replay-demo.ts",
+    "replay:broadcast": "AGRA_BROADCAST=1 tsx scripts/replay-demo.ts",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@next/third-parties": "^16.0.0",
+    "clsx": "^2.1.1",
+    "dotenv": "^17.4.2",
+    "lucide-react": "^0.554.0",
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "viem": "^2.39.3",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.0",
+    "prettier": "^3.7.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14"
+  }
+}
