@@ -7,7 +7,7 @@ Date: 2026-05-21
 - Public repo created: `https://github.com/gabrielantonyxaviour/agra-committee-grantmaker`
 - Owner/profile verified: Gabriel, Chrome profile directory `Default`, GitHub `gabrielantonyxaviour`, email `gabrielantony56@gmail.com`.
 - Local remote: `origin https://github.com/gabrielantonyxaviour/agra-committee-grantmaker.git`.
-- Push status: pending final commit/push at the time this report was written.
+- Push status: `main` pushed to GitHub.
 
 ## Submission Portal Status
 
@@ -96,8 +96,7 @@ Implemented surfaces:
 
 1. Fund `0x58374c7ec9192e2d588e39ACA0eA43f60f432b13` with Arc Testnet USDC or clear the faucet verification challenge.
 2. Deploy `DecisionRegistry` and run `npm run replay:broadcast`.
-3. Push the final repo contents to GitHub.
-4. Record a sub-3-minute demo video.
-5. Collect at least 3 real applicant/tester responses.
-6. Rerun `/polish` when `m2worker` is reachable.
-7. Fill the Google Form draft fields, stopping before final submission unless Gabriel explicitly approves.
+3. Record a sub-3-minute demo video.
+4. Collect at least 3 real applicant/tester responses.
+5. Rerun `/polish` when `m2worker` is reachable.
+6. Fill the Google Form draft fields, stopping before final submission unless Gabriel explicitly approves.
