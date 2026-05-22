@@ -184,7 +184,7 @@ function makeProof(
     tokenSymbol: currency,
     note:
       decision === "accepted"
-        ? "Fixture tx hash shown until Circle faucet funding is available."
+        ? "Fixture tx hash shown as demo data; no Arc transaction exists until Circle faucet funding is available."
         : "No transaction is produced for rejected or blocked decisions.",
   };
 }

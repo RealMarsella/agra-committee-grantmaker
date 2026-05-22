@@ -7,7 +7,17 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
-  const json = await request.json();
+  let json: unknown;
+
+  try {
+    json = await request.json();
+  } catch {
+    return NextResponse.json(
+      { error: "Invalid JSON body", issues: null },
+      { status: 400 },
+    );
+  }
+
   const parsed = applicationSchema.safeParse(json);
 
   if (!parsed.success) {

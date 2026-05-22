@@ -6,8 +6,8 @@
   "slug": "agora-agents-hackathon",
   "runId": "2026-05-21T00-46-18Z",
   "runDir": "/Users/gabrielantonyxaviour/Documents/hackathons/agora-agents-hackathon/execution/2026-05-21T00-46-18Z-agra-committee-governed-grantmaker",
-  "status": "deployed-awaiting-live-write-and-submission",
-  "agent": "gpt-5.5-builder",
+  "status": "demo-ready-hardening-complete-awaiting-live-write-video-traction-and-formal-polish",
+  "agent": "gpt-5.5-hardener",
   "modelPolicy": "execution-code-builds-must-use-gpt-5.5-or-claude-opus-4.7-not-kimi",
-  "output": "/Users/gabrielantonyxaviour/Documents/hackathons/agora-agents-hackathon/execution/2026-05-21T00-46-18Z-agra-committee-governed-grantmaker/outputs/builder-report.md"
+  "output": "/Users/gabrielantonyxaviour/Documents/hackathons/agora-agents-hackathon/execution/2026-05-21T00-46-18Z-agra-committee-governed-grantmaker/outputs/hardening-report.md"
 }

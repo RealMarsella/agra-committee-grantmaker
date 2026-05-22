@@ -6,7 +6,7 @@ No external applicants have been collected in this execution run yet.
 
 ## Planned Traction Artifact
 
-- Public application form or live app route.
+- Public application form or deployed app route.
 - Three to ten real micro-grant applications before final submission.
 - At least one accepted, one rejected, and one pending/capped example.
 - Written user validation for why autonomous micro-grants are useful or risky.

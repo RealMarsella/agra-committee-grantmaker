@@ -71,6 +71,17 @@
   font-weight: 700;
 }
 
+.proof-fixture-hash {
+  background: rgba(255, 189, 104, 0.1);
+  border: 1px solid rgba(255, 189, 104, 0.22);
+  border-radius: 12px;
+  color: var(--amber);
+  font-size: 0.82rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  padding: 10px 12px;
+}
+
 .agent-row {
   grid-template-columns: repeat(3, 1fr);
   margin-top: 14px;

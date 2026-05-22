@@ -30,7 +30,7 @@ AGRA is a working grantmaker console:
 
 ## Demo Path
 
-The canonical demo uses three applications: one accepted, one rejected by safety veto, and one pending due to treasury cap. The judge can submit a fourth application live and watch the same committee pipeline run.
+The canonical demo uses three applications: one accepted, one rejected by safety veto, and one pending due to treasury cap. The judge can submit a fourth application in the browser and watch the same committee pipeline run.
 
 ## Backend/API Choices
 

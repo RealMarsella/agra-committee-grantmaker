@@ -28,7 +28,7 @@ export function TraceField() {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
-    const draw = () => {
+    const drawFrame = () => {
       ctx.clearRect(0, 0, width, height);
       ctx.globalCompositeOperation = "lighter";
       for (let lane = 0; lane < 7; lane++) {
@@ -54,12 +54,17 @@ export function TraceField() {
         ctx.stroke();
       }
       tick += 1;
+    };
+
+    const draw = () => {
+      drawFrame();
       raf = requestAnimationFrame(draw);
     };
 
     resize();
     const ro = new ResizeObserver(resize);
     ro.observe(canvas);
+    drawFrame();
     if (!reduced) raf = requestAnimationFrame(draw);
 
     return () => {

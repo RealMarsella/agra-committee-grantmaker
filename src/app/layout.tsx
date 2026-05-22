@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "AGRA Committee-Governed Grantmaker",
   description:
     "Autonomous micro-grant committee with Arc and USDC-ready decision proofs.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

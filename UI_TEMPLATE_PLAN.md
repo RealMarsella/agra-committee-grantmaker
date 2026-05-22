@@ -19,11 +19,11 @@ Date: 2026-05-21
 - Tone: institutional, cinematic, precise; not a generic CRUD dashboard.
 - Palette: charcoal/ink base, warm paper panels, vivid green for accepted committee votes, amber for treasury caution, coral for rejected/veto signals, and blue for Arc proof links.
 - Typography: display serif for the AGRA name and high-drama proof numbers; geometric sans for dense app UI.
-- Components: rounded app shell, live committee rail, grant application form, decision trace ledger, Arc proof strip, and visible accepted/rejected cards.
+- Components: rounded app shell, committee rail, grant application form, decision trace ledger, Arc proof strip, and visible accepted/rejected cards.
 
 ## First-Screen Judge Moment
 
-The first viewport must show the actual product, not a marketing page: a judge can enter a grant request, watch three agents vote, and see an accepted/rejected trace with a fixture or live Arc proof label. The top statement is the product name and the live state transition, not generic value-prop copy.
+The first viewport must show the actual product, not a marketing page: a judge can enter a grant request, watch three agents vote, and see an accepted/rejected trace with a fixture, ready, or broadcast Arc proof label. The top statement is the product name and the decision state transition, not generic value-prop copy.
 
 ## Motion And Interaction Rules
 
@@ -53,3 +53,4 @@ The first viewport must show the actual product, not a marketing page: a judge c
 
 - Production screenshots captured through `agent-browser` at 1440, 768, and 375 widths under `outputs/visual-qa/`.
 - The required `/polish` M2 Playwright workflow was attempted but blocked by SSH timeout to `m2worker`; see the saved Playwright CLI report path in `PROGRESS.md` and `outputs/builder-report.md`.
+- Hardening fallback visual QA was rerun with local Playwright at 375, 768, and 1440 widths through `scripts/local-visual-qa.mjs`; screenshots are under `outputs/visual-qa-hardening/`.

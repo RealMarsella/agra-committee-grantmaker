@@ -48,7 +48,7 @@ export function GrantForm({
     <form className="application-form" onSubmit={onSubmit}>
       <div className="form-head">
         <div>
-          <span className="section-kicker">Live intake</span>
+          <span className="section-kicker">Demo intake</span>
           <h2>Submit a grant request</h2>
         </div>
         <CircleDollarSign size={22} />

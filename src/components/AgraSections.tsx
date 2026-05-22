@@ -71,13 +71,13 @@ export function HeroIntro() {
         <Sparkles size={16} /> Autonomous public-goods capital allocator
       </div>
       <h1 id="hero-title">
-        AGRA reviews grants, publishes dissent, and pays only when the committee
-        clears the risk.
+        AGRA reviews grants, publishes dissent, and prepares Arc payouts only
+        when the committee clears the risk.
       </h1>
       <p>
-        Submit a micro-grant. Three agents vote independently. The app returns a
-        trace hash, payout cap, and Arc proof status without a human approval
-        click.
+        Submit a micro-grant in the demo console. Three agents vote
+        independently, then the app returns a trace hash, payout cap, and Arc
+        proof status without a human approval click.
       </p>
       <div className="proof-strip">
         <Metric label="Committee agents" value="3" />
@@ -176,9 +176,18 @@ function ArcProofCard({ selected }: { selected: GrantApplication }) {
           </dd>
         </div>
       </dl>
-      {selected.decision.arcProof.explorerUrl ? (
-        <a className="proof-link" href={selected.decision.arcProof.explorerUrl}>
-          Fixture explorer link <ExternalLink size={15} />
+      {selected.decision.arcProof.status === "fixture" &&
+      selected.decision.arcProof.transactionHash ? (
+        <p className="proof-fixture-hash">
+          Fixture tx hash, not broadcast:{" "}
+          {shortHash(selected.decision.arcProof.transactionHash)}
+        </p>
+      ) : selected.decision.arcProof.explorerUrl ? (
+        <a
+          className="proof-link"
+          href={selected.decision.arcProof.explorerUrl}
+        >
+          Arcscan proof <ExternalLink size={15} />
         </a>
       ) : null}
     </article>

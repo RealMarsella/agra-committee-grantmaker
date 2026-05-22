@@ -4,7 +4,7 @@ Date: 2026-05-21
 
 ## One-Sentence Product
 
-AGRA is an autonomous public-goods grantmaker: it reviews real micro-grant applications with a three-agent committee, refuses unsafe requests, and records accepted decisions on Arc with USDC/EURC-ready proof.
+AGRA is an autonomous public-goods grantmaker: it reviews micro-grant applications in a demo console with a three-agent committee, refuses unsafe requests, and prepares accepted decisions for Arc recording with USDC-ready proof.
 
 ## README Source Of Truth
 
@@ -17,16 +17,16 @@ AGRA is an autonomous public-goods grantmaker: it reviews real micro-grant appli
 
 ## Demo Script
 
-1. Open with the live decision: AGRA accepted one grant and rejected another, with each vote visible.
+1. Open with the current seeded decision: AGRA accepted one fixture grant and rejected another, with each vote visible.
 2. Submit a new grant application in the first screen.
 3. Show the three committee agents vote independently: Public Goods, Safety, Treasury.
 4. Show the trace hash, payout currency, cap, and Arc proof status.
 5. Run `npm run replay` to prove the same decision path is reproducible.
-6. If live Arc proof exists, click the Arcscan URL. If not, explicitly state the faucet/wallet blocker and show `npm run arc:check`.
+6. If broadcast Arc proof exists, click the Arcscan URL. If not, explicitly state the faucet/wallet blocker and show `npm run arc:check`.
 
 ## Video Script
 
-"AGRA reviewed three micro-grant applications without a human approval click. The public-goods agent wanted impact, the safety agent vetoed weak proof, and the treasury agent capped payout size. This accepted application is ready for USDC on Arc, this one was rejected with a public reason, and every committee trace can be replayed from the repo."
+"AGRA reviewed three fixture micro-grant applications without a human approval click. The public-goods agent wanted impact, the safety agent vetoed weak proof, and the treasury agent capped payout size. This accepted application is ready for USDC recording on Arc once the test wallet is funded, this one was rejected with a public reason, and every committee trace can be replayed from the repo."
 
 ## Judging Criteria Mapping
 
@@ -52,7 +52,8 @@ AGRA is an autonomous public-goods grantmaker: it reviews real micro-grant appli
 - [x] Contract/replay tests passed.
 - [x] Browser/UI proof captured through `agent-browser` screenshots.
 - [x] Public repo created.
-- [ ] Repo pushed.
+- [x] Repo pushed.
 - [x] Submission portal fields inventoried.
 - [x] Public deploy URL.
-- [ ] Builder report written.
+- [x] Builder report written.
+- [x] Hardening local visual QA captured.
