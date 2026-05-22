@@ -17,6 +17,7 @@ AGRA now has a hardened local and public demo path: grant intake, deterministic 
 - Added `public/icon.svg` and metadata icon wiring to remove the favicon 404 seen during browser QA.
 - Added repeatable local visual proof script: `scripts/local-visual-qa.mjs`.
 - Updated `FEATURE_MATRIX.md`, `INTEGRATION_MATRIX.md`, `TRUTH_AUDIT.md`, `QUALITY_GATE.md`, `STATE.json`, and demo/source docs with honest fixture and blocker language.
+- Committed and pushed hardening source/docs to `main`.
 - Redeployed production to Vercel: `dpl_FuyoeN8fSxmgHkNYrrD82d8Aa1pj`, aliased to `https://agra-committee-grantmaker.vercel.app`.
 
 ## Checks Run
