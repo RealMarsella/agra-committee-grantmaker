@@ -2,6 +2,10 @@ const baseUrl = process.env.AGRA_QA_URL ?? "http://localhost:3003";
 const outputDir =
   process.env.AGRA_QA_OUTPUT_DIR ?? "outputs/visual-qa-hardening";
 
+await import("node:fs").then(({ mkdirSync }) =>
+  mkdirSync(outputDir, { recursive: true }),
+);
+
 const viewports = [
   { width: 375, height: 812 },
   { width: 768, height: 1024 },
@@ -14,7 +18,8 @@ function qaInput(width) {
     projectName: `Hardening Visual QA ${width}`,
     region: "Austin, USA",
     walletAddress: "0x7a379b1f02D9618f917B5D268a81e3f6CDA220e5",
-    proofUrl: "https://github.com/gabrielantonyxaviour/agra-committee-grantmaker",
+    proofUrl:
+      "https://github.com/gabrielantonyxaviour/agra-committee-grantmaker",
     impactStatement:
       "A public open source grant proof desk for developer communities that turns agent decisions into readable public reports and reusable education material.",
     riskNotes: "Public repository proof, no custody request, no private keys.",

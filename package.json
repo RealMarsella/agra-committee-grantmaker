@@ -11,6 +11,8 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "arc:check": "tsx scripts/check-arc.ts",
+    "wallet:auth:check": "tsx scripts/wallet-auth-smoke.ts",
+    "e2e:readiness": "env -u PLAYWRIGHT_CLI_REMOTE npx playwright-cli-sessions@latest exec scripts/readiness-e2e.mjs --channel=chrome",
     "replay": "tsx scripts/replay-demo.ts",
     "replay:broadcast": "AGRA_BROADCAST=1 tsx scripts/replay-demo.ts",
     "format": "prettier --write ."

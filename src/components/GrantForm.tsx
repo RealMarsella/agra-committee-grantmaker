@@ -3,6 +3,7 @@
 import { ArrowRight, CircleDollarSign } from "lucide-react";
 import type { Dispatch, FormEvent, SetStateAction } from "react";
 import { Field, TextField } from "./FormParts";
+import { WalletAuthPanel } from "./WalletAuthPanel";
 
 export type FormState = {
   applicantName: string;
@@ -96,6 +97,10 @@ export function GrantForm({
           <option value="EURC">EURC (requires live proof)</option>
         </select>
       </label>
+      <WalletAuthPanel
+        walletAddress={form.walletAddress}
+        onVerified={(address) => setForm({ ...form, walletAddress: address })}
+      />
       <Field
         label="Wallet"
         value={form.walletAddress}
