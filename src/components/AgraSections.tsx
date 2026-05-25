@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  ArrowRight,
   CheckCircle2,
   Clock3,
   ExternalLink,
@@ -15,6 +14,8 @@ import {
 } from "lucide-react";
 import type { Dispatch, SetStateAction } from "react";
 import { Metric } from "./FormParts";
+import { ArcPayoutPanel } from "./web3/ArcPayoutPanel";
+import { ConnectButton } from "./web3/ConnectButton";
 import { shortHash } from "@/lib/agra/format";
 import type {
   GrantApplication,
@@ -48,18 +49,16 @@ function decisionSummary(decision: GrantDecision) {
 export function Topbar() {
   return (
     <nav className="topbar">
-      <a className="brand" href="#top" aria-label="AGRA home">
+      <a className="brand" href="/" aria-label="AGRA home">
         <span className="brand-mark">A</span>
         <span>AGRA</span>
       </a>
       <div className="nav-links" aria-label="Status">
         <span>Arc Testnet</span>
-        <span>USDC first</span>
-        <span>Fixture-labeled</span>
+        <span>USDC settlement</span>
+        <span>Committee trace</span>
       </div>
-      <a className="repo-link" href="#proof">
-        Proof path <ArrowRight size={15} />
-      </a>
+      <ConnectButton />
     </nav>
   );
 }
@@ -148,6 +147,7 @@ export function DecisionSection({ selected }: { selected: GrantApplication }) {
           </article>
         ))}
       </div>
+      <ArcPayoutPanel selected={selected} />
     </section>
   );
 }
@@ -183,10 +183,7 @@ function ArcProofCard({ selected }: { selected: GrantApplication }) {
           {shortHash(selected.decision.arcProof.transactionHash)}
         </p>
       ) : selected.decision.arcProof.explorerUrl ? (
-        <a
-          className="proof-link"
-          href={selected.decision.arcProof.explorerUrl}
-        >
+        <a className="proof-link" href={selected.decision.arcProof.explorerUrl}>
           Arcscan proof <ExternalLink size={15} />
         </a>
       ) : null}
