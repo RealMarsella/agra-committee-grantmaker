@@ -28,7 +28,7 @@ export async function addApplication(
   const application = await createApplication(input);
   const arcProof = await recordDecisionOnChain(application);
   application.decision.arcProof = arcProof;
-  await putRecord(applicationIdBytes32(application), application);
+  await putRecord(await applicationIdBytes32(application), application);
   return application;
 }
 

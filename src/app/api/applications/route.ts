@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { applicationSchema } from "@/lib/agra/schema";
 import { addApplication, listApplications } from "@/lib/agra/store";
 
+export const runtime = "edge";
+
 export async function GET() {
   return NextResponse.json({ applications: await listApplications() });
 }

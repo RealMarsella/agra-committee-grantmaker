@@ -19,7 +19,7 @@ console.log(
   JSON.stringify(
     {
       applicationId: application.id,
-      onchainApplicationId: applicationIdBytes32(application),
+      onchainApplicationId: await applicationIdBytes32(application),
       applicant: application.applicantName,
       project: application.projectName,
       verdict: application.decision.verdict,

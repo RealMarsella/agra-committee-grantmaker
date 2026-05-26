@@ -1,5 +1,3 @@
-import { createHash } from "node:crypto";
-
 function normalize(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(normalize);
   if (value && typeof value === "object") {
@@ -17,9 +15,10 @@ export function stableStringify(value: unknown): string {
   return JSON.stringify(normalize(value));
 }
 
-export function sha256Hex(value: unknown): `0x${string}` {
-  const digest = createHash("sha256")
-    .update(stableStringify(value))
-    .digest("hex");
-  return `0x${digest}`;
+export async function sha256Hex(value: unknown): Promise<`0x${string}`> {
+  const data = new TextEncoder().encode(stableStringify(value));
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+  return `0x${hex}`;
 }

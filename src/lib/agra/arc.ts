@@ -46,7 +46,7 @@ export async function checkArcReadiness() {
   return { chainId, usdcDecimals, eurcDecimals };
 }
 
-export function applicationIdBytes32(application: GrantApplication) {
+export async function applicationIdBytes32(application: GrantApplication) {
   return sha256Hex({ applicationId: application.id });
 }
 
@@ -102,8 +102,9 @@ export async function recordDecisionOnChain(
     transport: http(ARC_RPC_URL),
   });
 
+  const appId = await applicationIdBytes32(application);
   const args = [
-    applicationIdBytes32(application),
+    appId,
     application.decision.verdict,
     application.decision.evidenceHash,
     application.decision.traceHash,

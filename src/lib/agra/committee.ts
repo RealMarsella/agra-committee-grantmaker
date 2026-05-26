@@ -403,8 +403,8 @@ export async function evaluateApplication(
     verdict === "rejected"
       ? votes.find((vote) => vote.verdict === "rejected")?.reason
       : undefined;
-  const evidenceHash = sha256Hex({ input, votes });
-  const traceHash = sha256Hex({
+  const evidenceHash = await sha256Hex({ input, votes });
+  const traceHash = await sha256Hex({
     evidenceHash,
     verdict,
     payoutAmount,
