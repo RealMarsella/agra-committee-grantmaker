@@ -164,26 +164,42 @@ export interface OnChainDecision {
   blockNumber: bigint;
 }
 
+const CHUNK_SIZE = 9_999n;
+
 /** Read every recorded decision straight from the registry's event log. */
 export async function readDecisionEvents(): Promise<OnChainDecision[]> {
   const registry = registryAddress();
   if (!registry) return [];
-  const logs = await publicClient.getContractEvents({
-    address: registry,
-    abi: decisionRegistryAbi,
-    eventName: "DecisionRecorded",
-    fromBlock: REGISTRY_DEPLOY_BLOCK,
-    toBlock: "latest",
-  });
-  return logs.map((log) => ({
-    applicationId: log.args.applicationId as `0x${string}`,
-    verdict: log.args.verdict as string,
-    evidenceHash: log.args.evidenceHash as `0x${string}`,
-    traceHash: log.args.traceHash as `0x${string}`,
-    applicant: log.args.applicant as `0x${string}`,
-    amount: (log.args.amount ?? 0n) as bigint,
-    token: log.args.token as `0x${string}`,
-    transactionHash: log.transactionHash,
-    blockNumber: log.blockNumber,
-  }));
+
+  const latest = await publicClient.getBlockNumber();
+  const all: OnChainDecision[] = [];
+
+  for (
+    let from = REGISTRY_DEPLOY_BLOCK;
+    from <= latest;
+    from += CHUNK_SIZE + 1n
+  ) {
+    const to = from + CHUNK_SIZE > latest ? latest : from + CHUNK_SIZE;
+    const logs = await publicClient.getContractEvents({
+      address: registry,
+      abi: decisionRegistryAbi,
+      eventName: "DecisionRecorded",
+      fromBlock: from,
+      toBlock: to,
+    });
+    for (const log of logs) {
+      all.push({
+        applicationId: log.args.applicationId as `0x${string}`,
+        verdict: log.args.verdict as string,
+        evidenceHash: log.args.evidenceHash as `0x${string}`,
+        traceHash: log.args.traceHash as `0x${string}`,
+        applicant: log.args.applicant as `0x${string}`,
+        amount: (log.args.amount ?? 0n) as bigint,
+        token: log.args.token as `0x${string}`,
+        transactionHash: log.transactionHash,
+        blockNumber: log.blockNumber,
+      });
+    }
+  }
+  return all;
 }

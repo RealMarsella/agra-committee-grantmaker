@@ -12,7 +12,7 @@ import { shortHash } from "../src/lib/agra/format";
 config({ path: ".env.local", quiet: true });
 config({ quiet: true });
 
-const application = createApplication(canonicalApplication);
+const application = await createApplication(canonicalApplication);
 
 console.log("AGRA canonical replay");
 console.log(

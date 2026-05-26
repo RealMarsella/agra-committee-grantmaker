@@ -25,7 +25,7 @@ const USDC_DECIMALS = 6;
 export async function addApplication(
   input: GrantApplicationInput,
 ): Promise<GrantApplication> {
-  const application = createApplication(input);
+  const application = await createApplication(input);
   const arcProof = await recordDecisionOnChain(application);
   application.decision.arcProof = arcProof;
   await putRecord(applicationIdBytes32(application), application);

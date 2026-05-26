@@ -1,10 +1,10 @@
 import { evaluateApplication } from "./committee";
 import type { GrantApplication, GrantApplicationInput } from "./types";
 
-export function createApplication(
+export async function createApplication(
   input: GrantApplicationInput,
   submittedAt = new Date().toISOString(),
-): GrantApplication {
+): Promise<GrantApplication> {
   const id =
     "agra-" +
     Math.abs(
@@ -17,7 +17,7 @@ export function createApplication(
     id,
     submittedAt,
     ...input,
-    decision: evaluateApplication(input),
+    decision: await evaluateApplication(input),
   };
 }
 
